@@ -4,7 +4,7 @@ var TREEFROG_SERVICE = (function() {
     return contentStr;
   };
   var _getCreateNavButton = function() {
-    let buttonString = ` <span class="btn btn-dark">Create Main Nav</span><span class="btn btn-dark">Create Sub Nav</span>`;
+    let buttonString = `<span class="btn btn-dark main-nav">Create Main Nav</span><span class="btn btn-dark">Create Sub Nav</span>`;
     return buttonString;
   };
   var _getHomeContent = function() {
@@ -31,11 +31,28 @@ var TREEFROG_SERVICE = (function() {
     let startBtn = `<span class="btn btn-dark get-started">Get Started</span>`;
     return startBtn;
   };
+  var _getMainModalContent = function() {
+    let showContent = `
+    <div class="alert-box-wrapper">
+    <div class="alert-box-text-wrapper">
+    <h2>Use this box to create navigation links</h2>
+    <p>You can create main navigation and sub navigation. To create sub-navigation you will need to first select a main nav and then create the sub nav.</p>
+    <p>Use the text box below to enter the name of your main navigation.</p>
+    <input placholder="Main Navigation">
+    </div>
+    <div class="alert-box-btn-wrapper">
+    <span class="btn btn-light">Create Sub Nav</span>
+    <span class="btn btn-light">Cancel</span>
+    </div>
+    </div>`;
+    return showContent;
+  };
 
   return {
     getGetStartedContent: _getGetStartedContent,
     getCreateNavButtons: _getCreateNavButton,
     getHomeContent: _getHomeContent,
-    getHomeStartButton: _getHomeStartButton
+    getHomeStartButton: _getHomeStartButton,
+    getMainModalContent: _getMainModalContent
   };
 })();

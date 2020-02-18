@@ -1,16 +1,21 @@
 function initButtons() {
   $(".get-started").click(function(e) {
     $("#home div").removeClass("active");
-    $("#addNav div").addClass("acitve");
+    $("#addNav div").addClass("active");
     $(".text-wrapper").html(TREEFROG_SERVICE.getGetStartedContent());
     $(".btn-holder").html(TREEFROG_SERVICE.getCreateNavButtons());
   });
-  $("#home").click(function() {
+  $("#home").click(function(e) {
     $("#addNav div").removeClass("active");
-    $("#home div").addClass("acitve");
+    $("#home div").addClass("active");
 
     $(".text-wrapper").html(TREEFROG_SERVICE.getHomeContent());
-    $(".btn-holder").html(TREEFROG_SERVICE.getHomeStartContent());
+    $(".btn-holder").html(TREEFROG_SERVICE.getHomeStartButton());
+  });
+  $(".main-nav").click(function(e) {
+    $(".modal").css("display", "block");
+    $(".alert-box").html(TREEFROG_SERVICE.getMainModalContent());
+    initButtons();
   });
 }
 
